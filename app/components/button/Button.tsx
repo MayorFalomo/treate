@@ -6,8 +6,14 @@ type IProps = {
   children: React.ReactNode;
   className?: string;
   variant?: 'primary' | 'outline' | 'secondary' | 'custom';
+  onClick?: () => void;
 };
-const ButtonItem: React.FC<IProps> = ({ children, className, variant = 'primary' }) => {
+const ButtonItem: React.FC<IProps> = ({
+  children,
+  className,
+  variant = 'primary',
+  onClick,
+}) => {
   return (
     <Button
       className={clsx(
@@ -18,6 +24,7 @@ const ButtonItem: React.FC<IProps> = ({ children, className, variant = 'primary'
         variant === 'secondary' && 'bg-gray-500 text-white',
         variant === 'custom' && ''
       )}
+      onClick={onClick}
     >
       {children}
     </Button>

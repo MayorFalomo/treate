@@ -4,6 +4,7 @@ import { Share2, ThumbsUp } from 'lucide-react';
 import React from 'react';
 import { MdOutlineComment } from 'react-icons/md';
 import { useSelector } from 'react-redux';
+import ButtonItem from '../button/Button';
 
 type IProps = {
   handleLike?: () => void;
@@ -21,27 +22,35 @@ const BlogInteractions: React.FC<IProps> = ({ handleLike, handleComment }) => {
       } flex items-center justify-between gap-[30px] my-[30px]`}
     >
       <div className="flex items-center gap-1">
-        <button onClick={handleLike}>
+        <ButtonItem
+          variant="custom"
+          className="bg-white text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
+          onClick={handleLike}
+        >
           <ThumbsUp />
-        </button>
+        </ButtonItem>
         <span>{randomNumber(1, 100)}</span>
         <span>likes</span>
       </div>
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-1">
-          <button
+          <ButtonItem
             onClick={handleComment}
-            className=" text-[20px] outline-none border-none "
+            variant="custom"
+            className="bg-white text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
           >
             <MdOutlineComment />{' '}
-          </button>
+          </ButtonItem>
           <span>{randomNumber(0, 50)} </span>
           <span>Comment </span>
         </div>
         <div className="flex items-center gap-1">
-          <button className="  text-[20px] outline-none border-none ">
+          <ButtonItem
+            variant="custom"
+            className="bg-white text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
+          >
             <Share2 />{' '}
-          </button>
+          </ButtonItem>
           <span>{randomNumber(0, 10)} </span>
           <span>Share</span>
         </div>

@@ -1,24 +1,31 @@
 import { randomNumber } from '@/app/utils';
 import Texts from '../Texts';
+import Image from 'next/image';
 
 const ShowLikes = () => {
   return (
     <div className="flex items-center mt-[40px]  gap-[10px]">
       <div className="flex items-center -space-x-4 rtl:space-x-reverse">
-        <img
+        <Image
           className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
-          alt=""
+          alt="img"
+          width={40}
+          height={40}
         />
-        <img
+        <Image
           className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
-          alt=""
+          alt="img"
+          width={40}
+          height={40}
         />
-        <img
+        <Image
           className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
-          alt=""
+          alt="img"
+          width={40}
+          height={40}
         />
         <a
           className="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800"
