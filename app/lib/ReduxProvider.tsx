@@ -1,5 +1,4 @@
 'use client';
-
 import { Provider } from 'react-redux';
 import store from './store';
 import { useEffect } from 'react';
@@ -17,9 +16,6 @@ const ThemeInitializer: React.FC<IProps> = ({ children }) => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       try {
-        // const parsedTheme = savedTheme;
-        // console.log(parsedTheme, 'parsedded');
-
         dispatch(setTheme(savedTheme));
       } catch (error) {
         console.error('Failed to parse theme from local storage:', error);

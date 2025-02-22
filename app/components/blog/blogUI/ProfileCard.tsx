@@ -39,7 +39,7 @@ const ProfileCard: React.FC<Props> = ({
               <Texts>
                 <strong> {authorsName}</strong>
               </Texts>
-              <span className="bg-cyanish rounded-[6px]  p-1">
+              <span className="bg-cyanish text-white rounded-[6px] p-1">
                 {<Check size={14} />}{' '}
               </span>
               <Texts className="max-[450px]:text-[12px]">{postAction}</Texts>
@@ -50,7 +50,7 @@ const ProfileCard: React.FC<Props> = ({
           </div>
         </div>
       </div>
-      <Texts className="text-black">
+      <Texts className="text-black max-[480px]:hidden">
         <span>{<Ellipsis />} </span>
       </Texts>
     </div>

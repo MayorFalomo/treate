@@ -8,9 +8,7 @@ import Anchored from '../animations/AnchorLink';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '@/app/lib/features/ThemeSlice';
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar: React.FC = () => {
   const [themeIcon, setThemeIcon] = useState<boolean>(false);
 
   const dispatch = useDispatch();
@@ -28,19 +26,23 @@ const Navbar = (props: Props) => {
         mode === 'light' ? 'bg-[#fff] text-[#000]' : 'bg-[#000] text-[#fff]'
       }`}
     >
-      <div className="w-[80%] mx-auto">
+      <div className="w-[80%] max-[480px]:w-[90%] mx-auto">
         <div className=" flex items-center justify-between py-4">
           <div>
             <Link href={'/'}>
               <Image src={'/logo.webp'} alt="logo" width={100} height={100} />
             </Link>
           </div>
-          <div className="flex items-center justify-between gap-[20px] w-[30%] py-3 ">
+          <div className=" flex items-center justify-between gap-[20px] w-[30%] max-[580px]:w-[50%] py-3 ">
             {NavItems.map((item) => (
               <ul key={item.id}>
                 <li className={`relative cursor-pointer group inline-block`}>
                   <Anchored href={item.path}>{item.title}</Anchored>
-                  <span className="absolute bottom-[-2px] left-0 w-full h-[1px] bg-[#000] scale-x-0 origin-bottom-right group-hover:scale-x-100 group-hover:origin-bottom-left transition-transform duration-500 ease-out"></span>
+                  <span
+                    className={`absolute bottom-[-2px] left-0 w-full h-[1px]  ${
+                      mode === 'light' ? 'bg-[#000]' : 'bg-[#fff]'
+                    } scale-x-0 origin-bottom-right group-hover:scale-x-100 group-hover:origin-bottom-left transition-transform duration-500 ease-out`}
+                  ></span>
                 </li>
               </ul>
             ))}
@@ -68,7 +70,7 @@ const Navbar = (props: Props) => {
                         y: 60,
                         opacity: 0,
                       }}
-                      className="absolute inset-0 flex items-center justify-center mb-2"
+                      className="absolute inset-0 flex items-center justify-center"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +82,9 @@ const Navbar = (props: Props) => {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="lucide lucide-moon"
+                        className={`lucide lucide-moon ${
+                          mode === 'dark' ? 'hover:fill-white' : 'hover:fill-black'
+                        }  transition-all duration-1000 ease-in`}
                       >
                         <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
                       </svg>
@@ -92,7 +96,7 @@ const Navbar = (props: Props) => {
                     aria-label="Switch to dark theme"
                     key="sun-icon"
                     onClick={handleGetTheme}
-                    className="relative w-full h-full bg-transparent border-none outline-none mb-[20px]"
+                    className="relative w-full h-full bg-transparent border-none outline-none"
                   >
                     <motion.span
                       initial={{ x: 60, y: -60 }}
@@ -110,6 +114,9 @@ const Navbar = (props: Props) => {
                         x: 60,
                         y: -60,
                         opacity: 0,
+                      }}
+                      whileHover={{
+                        rotate: 60,
                       }}
                       className="absolute z-40 inset-0 flex items-center justify-center"
                     >

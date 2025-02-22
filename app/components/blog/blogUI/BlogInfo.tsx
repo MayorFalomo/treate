@@ -30,7 +30,7 @@ const BlogInfo: React.FC<IProps> = ({
   return (
     <div>
       <div>
-        <h3 className="scroll-m-20 text-[20px] font-medium mb-4 tracking-tight">
+        <h3 className="scroll-m-20 text-[20px] max-[540px]:text-[18px] text-black font-medium mb-4 tracking-tight">
           <span>Title: </span>
           <span>{title}.</span>
         </h3>

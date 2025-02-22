@@ -7,7 +7,7 @@ export default async function Home() {
   const response: PostType[] = await getAllPosts();
 
   return (
-    <div className="min-[1800px]:w-[1200px] overflow-x-hidden">
+    <div className="min-[1800px]:w-[1200px] overflow-hidden ">
       <HomeHero />
       <BlogCard posts={response} />
     </div>

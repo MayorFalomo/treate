@@ -5,7 +5,6 @@ import Post from './Post';
 import SmoothBorder from '../../animations/SmoothBorder';
 import { useInView } from 'framer-motion';
 import { useSelector } from 'react-redux';
-import { Input } from '@/components/ui/input';
 import Texts from '../../Texts';
 import { Search, X } from 'lucide-react';
 import { useDebounce } from '@/app/hooks/useDebounce';
@@ -46,9 +45,12 @@ const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
     >
       <div
         id="blog"
-        className="flex flex-col  items-center max-[950px]:items-center justify-center min-[1800px]:max-w-[1200px] max-[1800px]:max-w-[1100px] max-[1800px]:w-[80%] max-[450px]:w-[100%] mx-auto max-[950px]:my-[0px] gap-[40px] my-[80px]"
+        className="flex flex-col  items-center max-[950px]:items-center justify-center min-[1800px]:max-w-[1200px] max-[1800px]:max-w-[1100px] max-[1800px]:w-[80%] max-[480px]:w-[90%] max-[450px]:w-[90%] mx-auto max-[950px]:my-[0px] gap-[40px] my-[80px]"
       >
-        <h1 ref={ref} className="flex flex-col relative text-[60px] font-semibold">
+        <h1
+          ref={ref}
+          className="flex flex-col relative text-[60px] max-[850px]:text-[50px] max-[480px]:text-[35px] max-[480px]:mt-6 font-semibold"
+        >
           <span>Our Blog </span>
 
           <SmoothBorder
