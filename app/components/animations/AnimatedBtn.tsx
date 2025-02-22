@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Anchored from './AnchorLink';
 
 interface EpicButtonProps {
   href: string;
@@ -10,10 +11,8 @@ export function AnimatedBtn({ href, children }: EpicButtonProps) {
   const mode = useSelector((state: { theme: { mode: string } }) => state.theme.mode);
 
   return (
-    <a
+    <Anchored
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       className={`relative mt-4 block w-full max-w-[180px] h-[40px] ${
         mode === 'light' ? 'bg-black text-white' : 'bg-white text-black'
       } overflow-hidden transition-colors delay-600 hover:bg-white hover:border-2 hover:border-black group`}
@@ -44,6 +43,6 @@ export function AnimatedBtn({ href, children }: EpicButtonProps) {
           {children}
         </span>
       </div>
-    </a>
+    </Anchored>
   );
 }

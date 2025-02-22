@@ -34,7 +34,7 @@ const HomeHero: React.FC = () => {
             </Texts>
           </FadeIn>
           <FadeIn delay={2.5}>
-            <AnimatedBtn href="#">Learn More </AnimatedBtn>
+            <AnimatedBtn href="#blog">Learn More </AnimatedBtn>
           </FadeIn>
         </div>
         <div className="h-full flex flex-col items-start justify-end">
