@@ -7,12 +7,14 @@ type IProps = {
   className?: string;
   variant?: 'primary' | 'outline' | 'secondary' | 'custom';
   onClick?: () => void;
+  ariaLabel?: string;
 };
 const ButtonItem: React.FC<IProps> = ({
   children,
   className,
   variant = 'primary',
   onClick,
+  ariaLabel = 'click',
 }) => {
   return (
     <Button
@@ -25,6 +27,7 @@ const ButtonItem: React.FC<IProps> = ({
         variant === 'custom' && ''
       )}
       onClick={onClick}
+      aria-label={ariaLabel}
     >
       {children}
     </Button>
