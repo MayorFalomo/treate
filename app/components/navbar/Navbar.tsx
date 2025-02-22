@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
                     className="relative w-full h-full bg-transparent border-none outline-none"
                   >
                     <motion.span
-                      initial={{ x: 60, y: -60 }}
+                      initial={{ x: 0, y: 0 }}
                       animate={{
                         rotate: themeIcon ? 60 : 0,
                         x: themeIcon ? 60 : 0,
