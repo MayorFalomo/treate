@@ -8,6 +8,7 @@ import ShowLikes from './ShowLikes';
 import { PostType } from '@/app/types';
 import { handleDisplay, randomNumber } from '@/app/utils';
 import { useInView } from 'framer-motion';
+import { useSelector } from 'react-redux';
 
 type Props = {
   post: PostType;
@@ -17,10 +18,15 @@ type Props = {
 const Post: React.FC<Props> = ({ post }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+  const mode = useSelector((state: { theme: { mode: string } }) => state.theme.mode);
 
   return (
     <Structure inView={isInView} ref={ref}>
-      <div className="w-[95%] py-[40px] mx-auto">
+      <div
+        className={` transition-all duration-500 ease-in-out ${
+          mode === 'light' ? 'bg-white text-textGrey' : 'bg-white text-black'
+        } w-[95%] py-[40px] mx-auto`}
+      >
         <ProfileCard
           authorsPicture={handleDisplay(post?.id, '/blackLady.webp', '/guySmiling.webp')}
           authorsName={handleDisplay(post?.id, 'Gretchen', 'Thomas')}

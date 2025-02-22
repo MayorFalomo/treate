@@ -23,7 +23,7 @@ const ProfileCard: React.FC<Props> = ({
     <div className="flex items-start justify-between mb-8 rounded-md w-full">
       <div
         className={` transition-all duration-500 ease-in-out ${
-          mode === 'light' ? 'bg-black text-[#fff]' : 'bg-white text-black'
+          mode === 'light' ? 'bg-white text-textGrey' : 'bg-white text-black'
         } flex flex-col items-center justify-center text-center`}
       >
         <div className="flex items-start gap-1 ">
@@ -50,7 +50,7 @@ const ProfileCard: React.FC<Props> = ({
           </div>
         </div>
       </div>
-      <Texts>
+      <Texts className="text-black">
         <span>{<Ellipsis />} </span>
       </Texts>
     </div>

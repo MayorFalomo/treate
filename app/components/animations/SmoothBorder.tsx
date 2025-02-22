@@ -13,6 +13,8 @@ interface IProps {
   className?: string;
   bgColor?: string;
   ref?: React.Ref<HTMLSpanElement>;
+  onAnimationComplete?: () => void;
+  onAnimationEnd?: VoidFunction;
 }
 
 const SmoothBorder: React.FC<IProps> = ({
@@ -25,8 +27,10 @@ const SmoothBorder: React.FC<IProps> = ({
   delay,
   easing,
   bgColor = '#000',
-  className = ` z-1 absolute left-0 bottom-[-2px] max-[720px]:bottom-[4px] h-0.5 `,
+  className = `z-1 absolute left-0 bottom-[-2px] max-[720px]:bottom-[4px] h-0.5 `,
   ref,
+  onAnimationComplete,
+  onAnimationEnd,
 }) => {
   return (
     <motion.span
@@ -45,6 +49,8 @@ const SmoothBorder: React.FC<IProps> = ({
         opacity: !inView ? initialOpacity : '',
         width: !inView ? initialWidth : '',
       }}
+      onAnimationEnd={onAnimationEnd}
+      onAnimationComplete={onAnimationComplete}
       className={`${className} bg-[${bgColor}] `}
     ></motion.span>
   );
