@@ -36,7 +36,7 @@ const ProfileCard: React.FC<Props> = ({
           />
           <div className="flex flex-col items-start space-y-0.5 font-medium  text-left rtl:text-right ms-3">
             <div className="flex items-center gap-1">
-              <Texts>
+              <Texts className="text-black">
                 <strong> {authorsName}</strong>
               </Texts>
               <span className="bg-cyanish text-white rounded-[6px] p-1">

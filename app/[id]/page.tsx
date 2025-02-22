@@ -2,14 +2,12 @@ import { getASinglePost } from '../api/posts';
 import Post from '../components/blog/blogUI/Post';
 import { PostType } from '../types';
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
+type Params = Promise<{ id: string }>;
 
-export default async function post({ params }: PageProps) {
-  const response: PostType = await getASinglePost(params.id);
+export default async function post(props: { params: Params }) {
+  const params = await props.params;
+  const blogId = params.id;
+  const response: PostType = await getASinglePost(blogId);
 
   return (
     <div>
