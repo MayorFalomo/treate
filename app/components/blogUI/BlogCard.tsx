@@ -62,16 +62,16 @@ const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
             } max-[720px]:bottom-[4px] h-0.5  `}
           />
         </h1>
-        <div className="flex items-center justify-end ml-auto">
+        <div className="flex max-[540px]:w-[90%]  items-center justify-end ml-auto">
           <div
-            className={`flex items-center border rounded-md overflow-hidden shadow-lg transition duration-300 ${
+            className={`w-[90%] flex items-center rounded-md overflow-hidden shadow-lg transition duration-300 ${
               mode === 'light' ? 'bg-white' : 'bg-gray-800'
             }`}
           >
             <input
               onChange={handleChange}
               placeholder="Search for posts"
-              className={`flex-1 p-2 transition duration-300 focus-visible:ring-transparent border-none outline-none placeholder:text-[14px] ${
+              className={`max-[540px]:w-full  p-2 transition duration-300 focus-visible:ring-transparent outline-none placeholder:text-[14px] ${
                 mode === 'light' ? 'bg-transparent text-[#000]' : 'bg-gray-700 text-white'
               }`}
               value={searchValue}

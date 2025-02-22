@@ -11,7 +11,7 @@ export default async function post(props: { params: Params }) {
 
   return (
     <div>
-      <div className="w-[80%] mx-auto">
+      <div className="w-[80%] max-[480px]:w-[90%] mx-auto">
         <Post post={response} />
       </div>
     </div>

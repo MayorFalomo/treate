@@ -19,7 +19,7 @@ const BlogInteractions: React.FC<IProps> = ({ handleLike, handleComment }) => {
     <div
       className={`${
         mode === 'light' ? 'bg-white text-textGrey' : 'bg-white text-textGrey'
-      } flex items-center justify-between gap-[30px] my-[30px]`}
+      } flex flex-wrap items-center justify-between gap-[10px] my-[30px]`}
     >
       <div className="flex items-center gap-1">
         <ButtonItem

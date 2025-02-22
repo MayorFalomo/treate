@@ -25,7 +25,7 @@ const HomeHero: React.FC = () => {
       }`}
     >
       <div className="h-[70%] w-[80%] max-[480px]:w-[90%] flex flex-col mx-auto  ">
-        <div className="max-w-[320px] mt-[30px] ml-auto">
+        <div className="max-w-[320px] mt-[30px] max-[480px]:mt-[50px] ml-auto">
           <FadeIn delay={0.5}>
             <Texts>
               At Treate, we aim to unlock a businesses true potential by providing
@@ -50,7 +50,7 @@ const HomeHero: React.FC = () => {
                     duration: 0.5,
                   },
                 }}
-                className="mt-4"
+                className="mt-2"
               >
                 <ChevronsDown />
               </motion.span>
