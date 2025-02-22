@@ -64,7 +64,7 @@ const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
         </h1>
         <div className="flex max-[540px]:w-[90%]  items-center justify-end ml-auto">
           <div
-            className={`w-[90%] flex items-center rounded-md overflow-hidden shadow-lg transition duration-300 ${
+            className={`flex items-center rounded-md overflow-hidden shadow-lg transition duration-300 ${
               mode === 'light' ? 'bg-white' : 'bg-gray-800'
             }`}
           >
