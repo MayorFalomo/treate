@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import ProfileCard from './ProfileCard';
 import BlogInfo from './BlogInfo';
-import BlogInteractions from '../BlogInteractions';
+import BlogInteractions from './BlogInteractions';
 import Structure from './Structure';
 import ShowLikes from './ShowLikes';
 import { PostType } from '@/app/types';

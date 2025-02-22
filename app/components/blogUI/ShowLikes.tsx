@@ -1,5 +1,5 @@
 import { randomNumber } from '@/app/utils';
-import Texts from '../../Texts';
+import Texts from '../Texts';
 
 const ShowLikes = () => {
   return (

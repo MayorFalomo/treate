@@ -2,10 +2,10 @@
 import { PostType } from '@/app/types';
 import React, { useEffect, useRef, useState } from 'react';
 import Post from './Post';
-import SmoothBorder from '../../animations/SmoothBorder';
+import SmoothBorder from '../animations/SmoothBorder';
 import { useInView } from 'framer-motion';
 import { useSelector } from 'react-redux';
-import Texts from '../../Texts';
+import Texts from '../Texts';
 import { Search, X } from 'lucide-react';
 import { useDebounce } from '@/app/hooks/useDebounce';
 

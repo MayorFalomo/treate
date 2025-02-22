@@ -1,5 +1,5 @@
 import { getASinglePost } from '../api/posts';
-import Post from '../components/blog/blogUI/Post';
+import Post from '../components/blogUI/Post';
 import { PostType } from '../types';
 
 type Params = Promise<{ id: string }>;

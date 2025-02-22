@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import Texts from '../../Texts';
+import Texts from '../Texts';
 import { Likes } from '@/app/types';
 import Image from 'next/image';
 import Link from 'next/link';

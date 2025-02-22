@@ -1,6 +1,6 @@
 import { PostType } from './types';
 import HomeHero from './components/homepage/hero/HomeHero';
-import BlogCard from './components/blog/blogUI/BlogCard';
+import BlogCard from './components/blogUI/BlogCard';
 import { getAllPosts } from './api/posts';
 
 export default async function Home() {

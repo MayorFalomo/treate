@@ -1,6 +1,6 @@
 import { Check, Ellipsis } from 'lucide-react';
 import React from 'react';
-import Texts from '../../Texts';
+import Texts from '../Texts';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
 
