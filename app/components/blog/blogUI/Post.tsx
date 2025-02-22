@@ -1,0 +1,48 @@
+'use client';
+import React, { useRef } from 'react';
+import ProfileCard from './ProfileCard';
+import BlogInfo from './BlogInfo';
+import BlogInteractions from '../BlogInteractions';
+import Structure from './Structure';
+import ShowLikes from './ShowLikes';
+import { PostType } from '@/app/types';
+import { handleDisplay, randomNumber } from '@/app/utils';
+import { useInView } from 'framer-motion';
+
+type Props = {
+  post: PostType;
+  inView?: boolean;
+};
+
+const Post: React.FC<Props> = ({ post }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
+  return (
+    <Structure inView={isInView} ref={ref}>
+      <div className="w-[95%] py-[40px] mx-auto">
+        <ProfileCard
+          authorsPicture={handleDisplay(post?.id, '/blackLady.webp', '/guySmiling.webp')}
+          authorsName={handleDisplay(post?.id, 'Gretchen', 'Thomas')}
+          estimatedTimeToRead={handleDisplay(post?.id, `${randomNumber(10, 2)} min read`)}
+          postAction={handleDisplay(post.id, 'updated new post', 'Added a new post')}
+        />
+        <BlogInfo
+          id={post.id}
+          title={post.title}
+          content={post.body}
+          postPicture={handleDisplay(post.id, '/blogImage.webp', '/blogImg.webp')}
+          postTags={
+            Number(post.id) % 2
+              ? ['#Travel', '#Family', '#Books', '#Culture', '#Life']
+              : ['#Finance', '#Family', '#Books', '#Culture', '#Life']
+          }
+        />
+        <ShowLikes />
+        <BlogInteractions />
+      </div>
+    </Structure>
+  );
+};
+
+export default Post;
