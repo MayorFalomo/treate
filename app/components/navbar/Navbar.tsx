@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
         mode === 'light' ? 'bg-[#fff] text-[#000]' : 'bg-[#000] text-[#fff]'
       }`}
     >
-      <div className="w-[80%] max-[480px]:w-[90%] mx-auto">
+      <div className="w-[80%] border-b max-[480px]:w-[90%] mx-auto">
         <div className=" flex items-center justify-between py-4">
           <div>
             <Link href={'/'}>

@@ -20,12 +20,12 @@ const HomeHero: React.FC = () => {
     <div
       ref={ref}
       id="hero"
-      className={`w-screen h-screen overflow-hidden transition-all duration-500 ease-in-out ${
+      className={`w-screen h-[85vh] overflow-hidden transition-all duration-500 ease-in-out ${
         mode === 'light' ? 'bg-[#fff] text-[#000]' : 'bg-[#000] text-[#fff]'
       }`}
     >
-      <div className="h-[70%] w-[80%] max-[480px]:w-[90%] flex flex-col mx-auto  ">
-        <div className="max-w-[320px] mt-[30px] max-[480px]:mt-[50px] ml-auto">
+      <div className="h-[80%] w-[80%] max-[480px]:w-[90%] flex flex-col mx-auto  ">
+        <div className="max-w-[320px] mt-[40px] max-[480px]:mt-[50px] ml-auto">
           <FadeIn delay={0.5}>
             <Texts>
               At Treate, we aim to unlock a businesses true potential by providing
@@ -38,7 +38,7 @@ const HomeHero: React.FC = () => {
           </FadeIn>
         </div>
         <div className="h-full flex flex-col items-start justify-end">
-          <h1 className="relative flex items-center justify-between w-full tracking-wider font-numans min-[1800px]:leading-[180px] min-[1800px]:text-[150px] min-[1200px]:leading-[120px] min-[1200px]:text-[100px] max-[1200px]:leading-[100px] max-[1200px]:text-[80px] max-[800px]:leading-[100px] max-[800px]:text-[80px]  max-[540px]:leading-[60px] max-[540px]:text-[55px] max-[480px]:text-[45px] max-[350px]:text-[35px]">
+          <h1 className="relative flex items-center justify-between w-full tracking-wider font-numans min-[1800px]:leading-[50px] min-[1200px]:leading-[90px] min-[1200px]:text-[100px]  max-[1200px]:text-[80px] max-[800px]:leading-[80px] max-[800px]:text-[80px]  max-[540px]:leading-[60px] max-[540px]:text-[55px] max-[480px]:text-[45px] max-[350px]:text-[35px]">
             <StaggeredText header={['TREATE.']} />
             {
               <motion.span
