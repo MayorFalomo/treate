@@ -19,8 +19,8 @@ const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
   const isInView = useInView(ref, { once: false });
   const [blogPosts, setBlogPosts] = useState<PostType[]>([]);
   const [searchValue, setSearchValue] = useState<string>('');
-  const postsPerPage = 5; // Define how many posts to display per page
-  const [currentPage, setCurrentPage] = useState(1); // Start on the first page
+  const postsPerPage = 5;
+  const [currentPage, setCurrentPage] = useState(1);
 
   const mode = useSelector((state: { theme: { mode: string } }) => state.theme.mode);
 

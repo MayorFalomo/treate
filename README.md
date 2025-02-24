@@ -1,6 +1,6 @@
 # Next.js Project
 
-This application is built using Next.js and uses Yarn for package management, Framer Motion for animations, and React Redux for state management.
+This application is built using Next.js and uses Yarn for package management, Framer Motion for animations, and React Redux for state management, ShadCn and Tailwind for styling.
 
 ## Table of Contents
 
@@ -27,6 +27,7 @@ This application is built using Next.js and uses Yarn for package management, Fr
 - [Yarn](https://yarnpkg.com/) - Package manager
 - [Framer Motion](https://www.framer.com/motion/) - A library for animations in React
 - [React Redux](https://react-redux.js.org/) - State management for React applications
+- [ShadCn & Tailwind](https://ui.shadcn.com/) - CSS Frameworks for Styling applications. 
 
 ## Getting Started
 

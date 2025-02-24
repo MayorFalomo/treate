@@ -24,7 +24,7 @@ const BlogInteractions: React.FC<IProps> = ({ handleLike, handleComment }) => {
       <div className="flex items-center gap-1">
         <ButtonItem
           variant="custom"
-          className="bg-white text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
+          className="bg-white p-1 text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
           onClick={handleLike}
         >
           <ThumbsUp />
@@ -37,7 +37,7 @@ const BlogInteractions: React.FC<IProps> = ({ handleLike, handleComment }) => {
           <ButtonItem
             onClick={handleComment}
             variant="custom"
-            className="bg-white text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
+            className="bg-white p-1 text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
           >
             <MdOutlineComment />{' '}
           </ButtonItem>
@@ -47,7 +47,7 @@ const BlogInteractions: React.FC<IProps> = ({ handleLike, handleComment }) => {
         <div className="flex items-center gap-1">
           <ButtonItem
             variant="custom"
-            className="bg-white text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
+            className="bg-white p-1 text-textGrey shadow-none hover:bg-white text-[20px] outline-none border-none "
           >
             <Share2 />{' '}
           </ButtonItem>
