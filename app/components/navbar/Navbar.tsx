@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
           <div>
             <Link href={'/'}>
               <Image
-                className="w-full h-8"
+                className="w-full h-8 object-contain"
                 src={'/logo.webp'}
                 alt="logo"
                 width={50}
