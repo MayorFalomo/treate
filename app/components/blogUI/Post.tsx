@@ -37,7 +37,7 @@ const Post: React.FC<Props> = ({ post }) => {
           id={post.id}
           title={post.title}
           content={post.body}
-          postPicture={handleDisplay(post.id, '/blogImage.webp', '/blogImg.webp')}
+          postPicture={handleDisplay(post.id, '/best-room.webp', '/nice-area.webp')}
           postTags={
             Number(post.id) % 2
               ? ['#Travel', '#Family', '#Books', '#Culture', '#Life']

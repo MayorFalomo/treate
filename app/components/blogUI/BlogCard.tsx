@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import Texts from '../Texts';
 import { Search, X } from 'lucide-react';
 import { useDebounce } from '@/app/hooks/useDebounce';
+import Paginated from '../pagination/Paginated';
 
 interface IPost {
   posts: PostType[];
@@ -16,20 +17,24 @@ interface IPost {
 const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
-  const [blogPosts, setBlogPosts] = useState<PostType[]>(posts);
+  const [blogPosts, setBlogPosts] = useState<PostType[]>([]);
   const [searchValue, setSearchValue] = useState<string>('');
+  const postsPerPage = 5; // Define how many posts to display per page
+  const [currentPage, setCurrentPage] = useState(1); // Start on the first page
 
   const mode = useSelector((state: { theme: { mode: string } }) => state.theme.mode);
 
   const debouncedValue = useDebounce(searchValue, 1000);
 
   useEffect(() => {
-    const filteredPosts = posts.filter(
-      (post) =>
-        post.title.toLowerCase().includes(debouncedValue) ||
-        post.body.toLowerCase().includes(debouncedValue)
-    );
-    setBlogPosts(filteredPosts);
+    if (debouncedValue) {
+      const filteredPosts = posts.filter(
+        (post) =>
+          post.title.toLowerCase().includes(debouncedValue) ||
+          post.body.toLowerCase().includes(debouncedValue)
+      );
+      setBlogPosts(filteredPosts);
+    }
   }, [debouncedValue, posts]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,7 +67,7 @@ const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
             } max-[720px]:bottom-[4px] h-0.5  `}
           />
         </h1>
-        <div className="flex max-[540px]:w-[100%]  items-center justify-end ml-auto">
+        <div className="flex max-[540px]:w-[100%] items-center justify-end ml-auto">
           <div
             className={`flex items-center rounded-md overflow-hidden shadow-lg transition duration-300 ${
               mode === 'light' ? 'bg-white' : 'bg-gray-800'
@@ -71,7 +76,7 @@ const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
             <input
               onChange={handleChange}
               placeholder="Search for posts"
-              className={`max-[540px]:w-full  p-2 transition duration-300 focus-visible:ring-transparent outline-none placeholder:text-[14px] ${
+              className={`max-[540px]:w-full min-w-[240px] p-2 transition duration-300 focus-visible:ring-transparent outline-none placeholder:text-[14px] ${
                 mode === 'light' ? 'bg-transparent text-[#000]' : 'bg-gray-700 text-white'
               }`}
               value={searchValue}
@@ -97,8 +102,8 @@ const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
           </div>
         </div>
         <div className="flex flex-col gap-[20px] w-full mx-auto">
-          {blogPosts.length > 1 ? (
-            blogPosts.map((post) => (
+          {blogPosts?.length > 1 ? (
+            blogPosts?.map((post) => (
               <div key={post.id}>
                 <Post post={post} />
               </div>
@@ -108,6 +113,17 @@ const BlogCard: React.FC<IPost> = ({ posts }: IPost) => {
               <Texts>Sorry, No Results found for "{searchValue}" </Texts>
             </div>
           )}
+        </div>
+        <div className="w-full">
+          <Paginated
+            posts={posts}
+            blogPosts={blogPosts}
+            postsPerPage={postsPerPage}
+            setBlogPosts={setBlogPosts}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            searchValue={searchValue}
+          />
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ type IProps = {
 };
 
 const BlogInfo: React.FC<IProps> = ({ id, content, postPicture, postTags, title }) => {
-  const [readMore, setReadMore] = useState(300);
+  const [readMore, setReadMore] = useState(100);
   const params = usePathname();
 
   return (

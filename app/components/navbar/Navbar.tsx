@@ -30,7 +30,13 @@ const Navbar: React.FC = () => {
         <div className=" flex items-center justify-between py-4">
           <div>
             <Link href={'/'}>
-              <Image src={'/logo.webp'} alt="logo" width={100} height={100} />
+              <Image
+                className="w-full h-8"
+                src={'/logo.webp'}
+                alt="logo"
+                width={50}
+                height={50}
+              />
             </Link>
           </div>
           <div className=" flex items-center justify-between gap-[20px] w-[30%] max-[580px]:w-[50%] py-3 ">

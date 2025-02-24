@@ -1,5 +1,5 @@
 export async function getAllPosts() {
-      const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/posts`);
   if (!res.ok) {
     throw new Error('Failed to fetch posts');
   }
@@ -7,7 +7,7 @@ export async function getAllPosts() {
 };
 
 export async function getASinglePost(id: string) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/posts/${id}`);
   if (!res.ok) {
     throw new Error('Failed to fetch post');
   }
